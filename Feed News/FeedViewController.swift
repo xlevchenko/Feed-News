@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import ExpandableLabel
 
 class FeedViewController: UITableViewController {
 
+    //@IBOutlet weak var previewLabel: ExpandableLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set automatic dimensions for row height
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
+       
+        //previewLabel.numberOfLines = 2
+        //previewLabel.collapsed = true
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
