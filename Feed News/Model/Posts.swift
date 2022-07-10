@@ -8,7 +8,7 @@
 import Foundation
 
 
-// MARK: - Posts
+//MARK: - Posts
 struct Posts: Codable {
     let posts: [Post]
 }
@@ -26,3 +26,4 @@ struct Post: Codable {
         case likesCount = "likes_count"
     }
 }
+

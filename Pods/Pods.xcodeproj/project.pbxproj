@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C73162EAA3F4FAF9E707014A7D1D424 /* ExpandableLabel */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ExpandableLabel; path = ExpandableLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C73162EAA3F4FAF9E707014A7D1D424 /* ExpandableLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpandableLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC0E54A6E848CF0AADA9C61D245B2C0 /* ExpandableLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableLabel.swift; path = Classes/ExpandableLabel.swift; sourceTree = "<group>"; };
 		2447E2CBD19139450BFFD7711D53D756 /* Pods-Feed News-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Feed News-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2676614AAE1BF80DC4F7DC988EB0A981 /* Pods-Feed News.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Feed News.modulemap"; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		81305E09FB53398802834C93D0453B33 /* ExpandableLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ExpandableLabel.modulemap; sourceTree = "<group>"; };
 		8DC92DC1C2FEF6B676C9EB7DCD720109 /* Pods-Feed News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Feed News.release.xcconfig"; sourceTree = "<group>"; };
 		997BF1B0D5986F553B1E5939C0D998A0 /* Pods-Feed News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Feed News.debug.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B8ACAD31644C3010D7B79F6AACA7EDA6 /* Pods-Feed News-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Feed News-Info.plist"; sourceTree = "<group>"; };
 		CB44863582D9250B6617652B14B9DFE8 /* ExpandableLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableLabel-umbrella.h"; sourceTree = "<group>"; };
 		D2B224E7C03B9C9508188D2285869B46 /* ExpandableLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ExpandableLabel-dummy.m"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		BA52AFE54F88F237F1B7F1D5C8A949DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C73162EAA3F4FAF9E707014A7D1D424 /* ExpandableLabel */,
+				0C73162EAA3F4FAF9E707014A7D1D424 /* ExpandableLabel.framework */,
 				DF99D3BB5FA22F629736968DEC15E790 /* Pods-Feed News */,
 			);
 			name = Products;
@@ -160,7 +160,6 @@
 				1AC0E54A6E848CF0AADA9C61D245B2C0 /* ExpandableLabel.swift */,
 				E1FD844E2E3CF855C6E346EED055494C /* Support Files */,
 			);
-			name = ExpandableLabel;
 			path = ExpandableLabel;
 			sourceTree = "<group>";
 		};
@@ -201,7 +200,7 @@
 			);
 			name = ExpandableLabel;
 			productName = ExpandableLabel;
-			productReference = 0C73162EAA3F4FAF9E707014A7D1D424 /* ExpandableLabel */;
+			productReference = 0C73162EAA3F4FAF9E707014A7D1D424 /* ExpandableLabel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AA0A3DC3241239D0E5F7729BE7A74BAB /* Pods-Feed News */ = {
@@ -441,7 +440,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ExpandableLabel/ExpandableLabel-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ExpandableLabel/ExpandableLabel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,7 +474,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ExpandableLabel/ExpandableLabel-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ExpandableLabel/ExpandableLabel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
