@@ -17,10 +17,8 @@ class FeedViewController: UITableViewController {
         super.viewDidLoad()
         // Set automatic dimensions for row height
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        
+        tableView.estimatedRowHeight = 144
         states = [Bool](repeating: true, count: arrayPosts.count)
-        
     }
     
     
@@ -29,7 +27,7 @@ class FeedViewController: UITableViewController {
         getPosts()
         tableView.reloadData()
     }
-
+    
     
     func getPosts() {
         NetworkManager.shared.getPosts { posts, error in
@@ -39,6 +37,7 @@ class FeedViewController: UITableViewController {
             }
             
             self.arrayPosts = posts?.posts ?? []
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -50,19 +49,21 @@ class FeedViewController: UITableViewController {
         return arrayPosts.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentSource = arrayPosts[indexPath.item]
         let cell = tableView.dequeueReusableCell(withIdentifier: "PreviewCell", for: indexPath) as! PreviewCell
-        //cell.previewLabel.delegate = self
+        cell.previewLabel.delegate = self
         
-        //cell.previewLabel.setLessLinkWith(lessLink: "Close", attributes: [.foregroundColor:UIColor.red], position: .center)
+        cell.previewLabel.collapsedAttributedLink = NSAttributedString(string: "Read More", attributes: [.foregroundColor:UIColor.black])
+        cell.previewLabel.setLessLinkWith(lessLink: "Read Less", attributes: [.foregroundColor:UIColor.red], position: .natural)
         
-//        cell.layoutIfNeeded()
-//        cell.previewLabel.shouldCollapse = true
-//        cell.previewLabel.textReplacementType = .word
-//        cell.previewLabel.numberOfLines = 2
-//        cell.previewLabel.collapsed = states[indexPath.row]
+        cell.layoutIfNeeded()
+        cell.previewLabel.shouldCollapse = true
+        cell.previewLabel.shouldExpand = true
+        cell.previewLabel.textReplacementType = .word
+        cell.previewLabel.numberOfLines = 2
+        cell.previewLabel.collapsed = true
+        
         
         cell.titleLabel.text = currentSource.title
         cell.previewLabel.text = currentSource.previewText
@@ -78,40 +79,38 @@ class FeedViewController: UITableViewController {
 }
 
 
-//// MARK: - ExpandableLabel Delegate
-//extension FeedViewController: ExpandableLabelDelegate {
-//
-//
-//    func willExpandLabel(_ label: ExpandableLabel) {
-//        tableView.beginUpdates()
-//    }
-//
-//
-//    func didExpandLabel(_ label: ExpandableLabel) {
-//        let point = label.convert(CGPoint.zero, to: tableView)
-//        if let indexPath = tableView.indexPathForRow(at: point) as IndexPath? {
-//            states[indexPath.row] = false
-//            DispatchQueue.main.async { [weak self] in
-//                self?.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-//            }
-//        }
-//        tableView.endUpdates()
-//    }
-//
-//
-//    func willCollapseLabel(_ label: ExpandableLabel) {
-//        tableView.beginUpdates()
-//    }
-//
-//
-//    func didCollapseLabel(_ label: ExpandableLabel) {
-//        let point = label.convert(CGPoint.zero, to: tableView)
-//        if let indexPath = tableView.indexPathForRow(at: point) as IndexPath? {
-//            states[indexPath.row] = true
-//            DispatchQueue.main.async { [weak self] in
-//                self?.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-//            }
-//        }
-//        tableView.endUpdates()
-//    }
-//}
+// MARK: - ExpandableLabel Delegate
+extension FeedViewController: ExpandableLabelDelegate {
+    
+    
+    func willExpandLabel(_ label: ExpandableLabel) {
+        tableView.beginUpdates()
+    }
+    
+    
+    func didExpandLabel(_ label: ExpandableLabel) {
+        let point = label.convert(CGPoint.zero, to: tableView)
+        if let indexPath = tableView.indexPathForRow(at: point) as IndexPath? {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
+        }
+        tableView.endUpdates()
+    }
+    
+    
+    func willCollapseLabel(_ label: ExpandableLabel) {
+        tableView.beginUpdates()
+    }
+    
+    
+    func didCollapseLabel(_ label: ExpandableLabel) {
+        let point = label.convert(CGPoint.zero, to: tableView)
+        if let indexPath = tableView.indexPathForRow(at: point) as IndexPath? {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
+        }
+        tableView.endUpdates()
+    }
+}

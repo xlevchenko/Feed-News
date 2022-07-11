@@ -17,41 +17,34 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreviewCell" id="g5M-R4-E5R" customClass="PreviewCell" customModule="Feed_News" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="202"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="176.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g5M-R4-E5R" id="MpD-2n-N5j">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="202"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="176.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Ingenious Prank Music Legend Mozart Played On Someone He Couldn’t Stand." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jX-7W-Ueu">
-                                            <rect key="frame" x="20" y="11" width="374" height="41.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="41.5" id="mrw-qN-V57"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="The Ingenious Prank Music Legend Mozart Played On Someone He Couldn’t Stand." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jX-7W-Ueu">
+                                            <rect key="frame" x="20" y="11" width="374" height="41"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsh-um-h5C" customClass="ExpandableLabel" customModule="Feed_News" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="60" width="374" height="41.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="41.5" id="rex-K6-aZH"/>
-                                            </constraints>
-                                            <string key="text">When we think of famous bands, we have an image of each member’s distinctive roles. More often than not, every member has clearly defined roles that they stick to from beginning to end.</string>
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsh-um-h5C" customClass="ExpandableLabel" customModule="ExpandableLabel">
+                                            <rect key="frame" x="20" y="59.5" width="374" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" systemColor="systemGrayColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❤️8448" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5t-sO-1Ih">
-                                            <rect key="frame" x="20" y="117" width="65" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="❤️8448" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5t-sO-1Ih">
+                                            <rect key="frame" x="20" y="88.5" width="65" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" systemColor="systemGrayColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mi-6d-pxH">
-                                            <rect key="frame" x="20" y="146" width="374" height="45.5"/>
+                                            <rect key="frame" x="20" y="117.5" width="374" height="48"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="45" id="9U5-Mg-fYh"/>
+                                                <constraint firstAttribute="height" constant="48" id="KXF-VK-xzN"/>
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Expand">
@@ -61,7 +54,7 @@
                                             </buttonConfiguration>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzE-Lp-RIl">
-                                            <rect key="frame" x="336" y="114" width="57.5" height="21"/>
+                                            <rect key="frame" x="336" y="88.5" width="57.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" systemColor="systemGrayColor"/>
                                             <nil key="highlightedColor"/>
@@ -69,19 +62,19 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="wzE-Lp-RIl" secondAttribute="trailing" constant="0.5" id="4rR-pj-aNc"/>
+                                        <constraint firstItem="W5t-sO-1Ih" firstAttribute="top" secondItem="qsh-um-h5C" secondAttribute="bottom" constant="8" id="ApT-4g-DfZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2mi-6d-pxH" secondAttribute="bottom" id="C2B-dv-TMJ"/>
                                         <constraint firstItem="2mi-6d-pxH" firstAttribute="leading" secondItem="MpD-2n-N5j" secondAttribute="leading" constant="20" id="FSx-lZ-See"/>
                                         <constraint firstAttribute="trailing" secondItem="2mi-6d-pxH" secondAttribute="trailing" constant="20" id="HNf-ux-Vd0"/>
                                         <constraint firstAttribute="trailing" secondItem="9jX-7W-Ueu" secondAttribute="trailing" constant="20" id="PEl-zv-viL"/>
                                         <constraint firstItem="9jX-7W-Ueu" firstAttribute="top" secondItem="MpD-2n-N5j" secondAttribute="top" constant="11" id="TWm-YQ-7pB"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="2mi-6d-pxH" secondAttribute="bottom" constant="-0.5" id="UC2-Bx-JXk"/>
-                                        <constraint firstItem="2mi-6d-pxH" firstAttribute="top" secondItem="wzE-Lp-RIl" secondAttribute="bottom" constant="11" id="fa8-BL-z03"/>
                                         <constraint firstItem="2mi-6d-pxH" firstAttribute="top" secondItem="W5t-sO-1Ih" secondAttribute="bottom" constant="8" symbolic="YES" id="gGR-be-MzE"/>
-                                        <constraint firstItem="2mi-6d-pxH" firstAttribute="top" secondItem="qsh-um-h5C" secondAttribute="bottom" constant="44.5" id="lLy-I1-w9o"/>
                                         <constraint firstAttribute="trailing" secondItem="qsh-um-h5C" secondAttribute="trailing" constant="20" id="moT-fm-sIJ"/>
                                         <constraint firstItem="wzE-Lp-RIl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="W5t-sO-1Ih" secondAttribute="trailing" constant="8" symbolic="YES" id="o3c-Hj-Kti"/>
                                         <constraint firstItem="qsh-um-h5C" firstAttribute="top" secondItem="9jX-7W-Ueu" secondAttribute="bottom" constant="7.5" id="pfU-ed-qMb"/>
                                         <constraint firstItem="2mi-6d-pxH" firstAttribute="leading" secondItem="W5t-sO-1Ih" secondAttribute="leading" id="rBS-0h-YdV"/>
                                         <constraint firstItem="qsh-um-h5C" firstAttribute="leading" secondItem="MpD-2n-N5j" secondAttribute="leading" constant="20" id="vBo-rj-7lC"/>
+                                        <constraint firstItem="wzE-Lp-RIl" firstAttribute="top" secondItem="qsh-um-h5C" secondAttribute="bottom" constant="8" id="vVN-zU-240"/>
                                         <constraint firstItem="9jX-7W-Ueu" firstAttribute="leading" secondItem="MpD-2n-N5j" secondAttribute="leading" constant="20" id="xL1-mi-xsg"/>
                                     </constraints>
                                 </tableViewCellContentView>
