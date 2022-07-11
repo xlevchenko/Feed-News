@@ -15,7 +15,8 @@ struct Posts: Codable {
 
 // MARK: - Post
 struct Post: Codable {
-    let postID, timeshamp: Int
+    let postID: Int
+    let timeshamp: Date
     let title, previewText: String
     let likesCount: Int
 

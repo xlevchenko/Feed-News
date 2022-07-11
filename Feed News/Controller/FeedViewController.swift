@@ -45,6 +45,10 @@ class FeedViewController: UITableViewController {
     }
     
     
+    @IBAction func sortedButton(_ sender: Any) {
+    }
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayPosts.count
     }
@@ -68,7 +72,7 @@ class FeedViewController: UITableViewController {
         cell.titleLabel.text = currentSource.title
         cell.previewLabel.text = currentSource.previewText
         cell.likesCount.text = "❤️\(currentSource.likesCount)"
-        cell.timeshamp.text = String(currentSource.timeshamp)
+        cell.timeshamp.text = currentSource.timeshamp.timeAgo()
         return cell
     }
     

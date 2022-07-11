@@ -34,7 +34,7 @@ class NetworkManager {
             
             do {
                 let decoder = JSONDecoder()
-                //decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.dateDecodingStrategy = .secondsSince1970
                 let posts = try decoder.decode(Posts.self, from: data)
                 completed(posts, nil)
             } catch let jsonErr {

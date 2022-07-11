@@ -93,7 +93,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="Ngy-31-PrW">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" id="cqm-pT-0np"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" id="cqm-pT-0np">
+                            <connections>
+                                <action selector="sortedButton:" destination="Wtv-Xo-nzn" id="XgW-uE-nzk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ue-gY-LGl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
