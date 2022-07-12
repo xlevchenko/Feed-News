@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Feed View Controller-->
         <scene sceneID="qDL-Td-SA3">
             <objects>
                 <tableViewController id="Wtv-Xo-nzn" customClass="FeedViewController" customModule="Feed_News" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,12 +92,8 @@
                             <outlet property="delegate" destination="Wtv-Xo-nzn" id="bBU-si-cYh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="Ngy-31-PrW">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.up.arrow.down" catalog="system" id="cqm-pT-0np">
-                            <connections>
-                                <action selector="sortedButton:" destination="Wtv-Xo-nzn" id="XgW-uE-nzk"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" id="Ngy-31-PrW">
+                        <nil key="title"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ue-gY-LGl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -124,7 +120,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

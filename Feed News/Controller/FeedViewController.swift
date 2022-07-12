@@ -19,6 +19,7 @@ class FeedViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 144
         states = [Bool](repeating: true, count: arrayPosts.count)
+        sortedButton()
     }
     
     
@@ -45,7 +46,25 @@ class FeedViewController: UITableViewController {
     }
     
     
-    @IBAction func sortedButton(_ sender: Any) {
+    func sortedButton() {
+        let sortMenu = UIMenu(title: "", children: [
+            UIAction(title: "Like",state: .on, handler: { _ in
+                self.arrayPosts.sort { post1, post2 in
+                    return post1.likesCount < post2.likesCount
+                }
+                self.tableView.reloadData()
+            }),
+            UIAction(title: "Date", state: .off, handler: { _ in
+                self.arrayPosts.sort { post1, post2 in
+                    return post1.timeshamp < post2.timeshamp
+                }
+                
+                self.tableView.reloadData()
+            })
+        ])
+        
+        let button = UIBarButtonItem(title: "Sort", menu: sortMenu)
+        navigationItem.rightBarButtonItem = button
     }
     
     
