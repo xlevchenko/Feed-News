@@ -44,4 +44,38 @@ class NetworkManager {
         }
         task.resume()
     }
+    
+    
+    func getDetailPost(for Id: String, completed: @escaping(DetailPost?, Error?) -> Void) {
+        // "https://raw.githubusercontent.com/anton-natife/jsons/master/api/\(Id).json"
+        let url = "https://raw.githubusercontent.com/anton-natife/jsons/master/api/posts/\(Id).json"
+        
+        guard let url = URL(string: url) else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            if let _ = error {
+                completed(nil, error)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(nil, error)
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .secondsSince1970
+                let post = try decoder.decode(DetailPost.self, from: data)
+                completed(post, nil)
+            } catch let jsonErr {
+                print("Failed to decode json:", jsonErr)
+                completed(nil, jsonErr)
+            }
+        }
+        task.resume()
+    }
 }

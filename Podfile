@@ -7,4 +7,5 @@ target 'Feed News' do
 
   # Pods for Feed News
 	pod "ExpandableLabel"
+	pod 'SDWebImage', '~> 5.0'
 end

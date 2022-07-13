@@ -11,14 +11,12 @@ import ExpandableLabel
 class FeedViewController: UITableViewController {
     
     var arrayPosts = [Post]()
-    var states: Array<Bool>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set automatic dimensions for row height
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 144
-        states = [Bool](repeating: true, count: arrayPosts.count)
         sortedButton()
     }
     
@@ -31,16 +29,16 @@ class FeedViewController: UITableViewController {
     
     
     func getPosts() {
-        NetworkManager.shared.getPosts { posts, error in
+        NetworkManager.shared.getPosts { [weak self] posts, error in
             if let error = error {
                 print("Failed to featch apps", error)
                 return
             }
             
-            self.arrayPosts = posts?.posts ?? []
+            self?.arrayPosts = posts?.posts ?? []
             
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }
@@ -48,7 +46,7 @@ class FeedViewController: UITableViewController {
     
     func sortedButton() {
         let sortMenu = UIMenu(title: "", children: [
-            UIAction(title: "Like",state: .on, handler: { _ in
+            UIAction(title: "Like",state: .off, handler: { _ in
                 self.arrayPosts.sort { post1, post2 in
                     return post1.likesCount < post2.likesCount
                 }
@@ -99,8 +97,21 @@ class FeedViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-}
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let postId = arrayPosts[indexPath.item]
+//        let vc = DetailViewController(postID: "\(postId.postID)")
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
+    
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "SegueID" else { return }
+        guard let destination = segue.destination as? DetailViewController else { return }
+        guard let selectedRow = self.tableView.indexPathForSelectedRow?.row else { return }
+        destination.postID = String(arrayPosts[selectedRow].postID)
+    }
+}
 
 // MARK: - ExpandableLabel Delegate
 extension FeedViewController: ExpandableLabelDelegate {

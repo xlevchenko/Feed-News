@@ -1,16 +1,22 @@
 PODS:
   - ExpandableLabel (0.5.2)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
 
 DEPENDENCIES:
   - ExpandableLabel
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - ExpandableLabel
+    - SDWebImage
 
 SPEC CHECKSUMS:
   ExpandableLabel: c2fab6d27860c572d67134b30522a5917746171d
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
 
-PODFILE CHECKSUM: fefb81f077cc1a83951aeea528d2a4d0da30b6be
+PODFILE CHECKSUM: 1c0bc0602ef143d70914dfec602016827b750d94
 
 COCOAPODS: 1.11.2
