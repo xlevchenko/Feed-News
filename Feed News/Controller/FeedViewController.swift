@@ -98,19 +98,20 @@ class FeedViewController: UITableViewController {
         return UITableView.automaticDimension
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let postId = arrayPosts[indexPath.item]
-//        let vc = DetailViewController(postID: "\(postId.postID)")
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let postId = String(arrayPosts[indexPath.item].postID)
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailController") as? DetailViewController else { return }
+        vc.postID = postId
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "SegueID" else { return }
-        guard let destination = segue.destination as? DetailViewController else { return }
-        guard let selectedRow = self.tableView.indexPathForSelectedRow?.row else { return }
-        destination.postID = String(arrayPosts[selectedRow].postID)
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard segue.identifier == "SegueID" else { return }
+//        guard let destination = segue.destination as? DetailViewController else { return }
+//        guard let selectedRow = self.tableView.indexPathForSelectedRow?.row else { return }
+//        destination.postID = String(arrayPosts[selectedRow].postID)
+//    }
 }
 
 // MARK: - ExpandableLabel Delegate

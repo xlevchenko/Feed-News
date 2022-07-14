@@ -14,100 +14,70 @@
             filePath = "Feed News/Controller/DetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "DetailViewController"
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - ae4fefcdc66b2020"
+                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - caaa5deb106b883a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Feed_News.DetailViewController.postID.getter : Swift.Optional&lt;Swift.Int&gt;"
+                  symbolName = "Feed_News.DetailViewController.postID.getter : Swift.String"
                   moduleName = "Feed News"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/xlevchenko/Desktop/Feed%20News/Feed%20News/Controller/DetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "96">
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "100">
                </Location>
                <Location
-                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - fc3f6e6460d88834"
+                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - 19d6b00ae97c9836"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Feed_News.DetailViewController.postID.setter : Swift.Optional&lt;Swift.Int&gt;"
+                  symbolName = "Feed_News.DetailViewController.postID.setter : Swift.String"
                   moduleName = "Feed News"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/xlevchenko/Desktop/Feed%20News/Feed%20News/Controller/DetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
                   offsetFromSymbolStart = "140">
                </Location>
                <Location
-                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - 139e8b8fc3137e27"
+                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - ddff3f63f294bc25"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Feed_News.DetailViewController.postID.modify : Swift.Optional&lt;Swift.Int&gt;"
+                  symbolName = "Feed_News.DetailViewController.postID.modify : Swift.String"
                   moduleName = "Feed News"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/xlevchenko/Desktop/Feed%20News/Feed%20News/Controller/DetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
                   offsetFromSymbolStart = "0">
                </Location>
                <Location
-                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - aa63846559f6fa52"
+                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - ddc474228a177236"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Feed_News.DetailViewController.postID.modify : Swift.Optional&lt;Swift.Int&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  symbolName = "Feed_News.DetailViewController.postID.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "Feed News"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/xlevchenko/Desktop/Feed%20News/Feed%20News/Controller/DetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
                   offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - ee584669fd8aa816"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Feed_News.DetailViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Feed_News.DetailViewController"
-                  moduleName = "Feed News"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xlevchenko/Desktop/Feed%20News/Feed%20News/Controller/DetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "376">
-               </Location>
-               <Location
-                  uuid = "2C728BEA-F997-4BB2-96DC-7A49A682C494 - 4b331946a86a36d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Feed_News.DetailViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Feed_News.DetailViewController&gt;"
-                  moduleName = "Feed News"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xlevchenko/Desktop/Feed%20News/Feed%20News/Controller/DetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "356">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -122,9 +92,9 @@
             filePath = "Feed News/Controller/DetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "getDetailPost(id:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,8 +108,24 @@
             filePath = "Feed News/Controller/DetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9043D432-5E0E-4829-AE34-AE3532ED2C7F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Feed News/Controller/DetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "getDetailPost(id:)"
             landmarkType = "7">
          </BreakpointContent>
