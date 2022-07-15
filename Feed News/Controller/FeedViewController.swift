@@ -14,16 +14,17 @@ class FeedViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getPosts()
+        sortedButton()
+        
         // Set automatic dimensions for row height
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 144
-        sortedButton()
+        tableView.estimatedRowHeight = 177
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getPosts()
         tableView.reloadData()
     }
     
@@ -34,10 +35,9 @@ class FeedViewController: UITableViewController {
                 print("Failed to featch apps", error)
                 return
             }
-            
-            self?.arrayPosts = posts?.posts ?? []
-            
+
             DispatchQueue.main.async {
+                self?.arrayPosts = posts?.posts ?? []
                 self?.tableView.reloadData()
             }
         }
@@ -50,14 +50,14 @@ class FeedViewController: UITableViewController {
                 self.arrayPosts.sort { post1, post2 in
                     return post1.likesCount < post2.likesCount
                 }
-                self.tableView.reloadData()
+                    self.tableView.reloadData()
             }),
+            
             UIAction(title: "Date", state: .off, handler: { _ in
                 self.arrayPosts.sort { post1, post2 in
                     return post1.timeshamp < post2.timeshamp
                 }
-                
-                self.tableView.reloadData()
+                    self.tableView.reloadData()
             })
         ])
         
@@ -71,52 +71,52 @@ class FeedViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentSource = arrayPosts[indexPath.item]
         let cell = tableView.dequeueReusableCell(withIdentifier: "PreviewCell", for: indexPath) as! PreviewCell
-        cell.previewLabel.delegate = self
+        //let post = arrayPosts[indexPath.row]
         
-        cell.previewLabel.collapsedAttributedLink = NSAttributedString(string: "Read More", attributes: [.foregroundColor:UIColor.black])
+        cell.previewLabel.delegate = self
+        cell.previewLabel.collapsedAttributedLink = NSAttributedString(string: "More", attributes: [.foregroundColor:UIColor.black])
         cell.previewLabel.setLessLinkWith(lessLink: "Read Less", attributes: [.foregroundColor:UIColor.red], position: .natural)
         
         cell.layoutIfNeeded()
+        
         cell.previewLabel.shouldCollapse = true
         cell.previewLabel.shouldExpand = true
-        cell.previewLabel.textReplacementType = .word
+        cell.previewLabel.textReplacementType = .character
         cell.previewLabel.numberOfLines = 2
         cell.previewLabel.collapsed = true
         
-        
-        cell.titleLabel.text = currentSource.title
-        cell.previewLabel.text = currentSource.previewText
-        cell.likesCount.text = "❤️\(currentSource.likesCount)"
-        cell.timeshamp.text = currentSource.timeshamp.timeAgo()
+        cell.post = arrayPosts[indexPath.row]
+//        cell.titleLabel.text = post.title
+//        cell.previewLabel.text = post.previewText
+//        cell.likesCount.text = "❤️\(post.likesCount)"
+//        cell.timeshamp.text = post.timeshamp.timeAgo()
         return cell
     }
     
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let postId = String(arrayPosts[indexPath.item].postID)
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailController") as? DetailViewController else { return }
         vc.postID = postId
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard segue.identifier == "SegueID" else { return }
-//        guard let destination = segue.destination as? DetailViewController else { return }
-//        guard let selectedRow = self.tableView.indexPathForSelectedRow?.row else { return }
-//        destination.postID = String(arrayPosts[selectedRow].postID)
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow?.row{
+                let selectedRow = indexPath
+                let detailVC = segue.destination as! DetailViewController
+            detailVC.postID = String(self.arrayPosts[selectedRow].postID)
+        } else {
+            print("nil")
+        }
+    }
 }
 
 // MARK: - ExpandableLabel Delegate
 extension FeedViewController: ExpandableLabelDelegate {
-    
     
     func willExpandLabel(_ label: ExpandableLabel) {
         tableView.beginUpdates()

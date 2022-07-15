@@ -15,7 +15,15 @@ class PreviewCell: UITableViewCell {
     @IBOutlet weak var likesCount: UILabel!
     @IBOutlet weak var timeshamp: UILabel!
     
-
+    var post: Post! {
+        didSet {
+            titleLabel.text = post.title
+            previewLabel.text = post.previewText
+            likesCount.text = "❤️\(post.likesCount)"
+            timeshamp.text = post.timeshamp.timeAgo()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,5 +38,12 @@ class PreviewCell: UITableViewCell {
         super.prepareForReuse()
         previewLabel.collapsed = true
         previewLabel.text = nil
+        
+//        previewLabel.shouldCollapse = true
+//        previewLabel.shouldExpand = true
+//        previewLabel.textReplacementType = .word
+//        previewLabel.numberOfLines = 2
+//        previewLabel.collapsed = true
+        
     }
 }

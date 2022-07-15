@@ -16,7 +16,6 @@ extension Date {
         let minute = 60
         let hour = 60 * minute
         let day = 24 * hour
-        let week = 7 * day
         
         let quotient: Int
         let unit: String
