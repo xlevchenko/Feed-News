@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkManager {
     
-    static let shared   = NetworkManager()
+    static let shared = NetworkManager()
     
     private init() { }
     
@@ -47,7 +47,6 @@ class NetworkManager {
     
     
     func getDetailPost(for Id: String, completed: @escaping(DetailPost?, Error?) -> Void) {
-        // "https://raw.githubusercontent.com/anton-natife/jsons/master/api/\(Id).json"
         let url = "https://raw.githubusercontent.com/anton-natife/jsons/master/api/posts/\(Id).json"
         
         guard let url = URL(string: url) else { return }

@@ -54,7 +54,6 @@
                                                 <color key="baseBackgroundColor" red="0.086510159075260162" green="0.28090479969978333" blue="0.38362804055213928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </buttonConfiguration>
                                             <connections>
-                                                <action selector="moveToDetail:" destination="Wtv-Xo-nzn" eventType="touchUpInside" id="MVe-J5-22Y"/>
                                                 <segue destination="nQo-bc-L4K" kind="show" identifier="SegueID" id="ZiX-lN-tdW"/>
                                             </connections>
                                         </button>

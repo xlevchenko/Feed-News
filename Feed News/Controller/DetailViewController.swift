@@ -33,7 +33,6 @@ class DetailViewController: UIViewController {
         getDetailPost()
     }
     
-    
     func getDetailPost() {
         NetworkManager.shared.getDetailPost(for: postID) { [weak self] post, error in
             if let error = error {

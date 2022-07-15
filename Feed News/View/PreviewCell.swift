@@ -38,12 +38,5 @@ class PreviewCell: UITableViewCell {
         super.prepareForReuse()
         previewLabel.collapsed = true
         previewLabel.text = nil
-        
-//        previewLabel.shouldCollapse = true
-//        previewLabel.shouldExpand = true
-//        previewLabel.textReplacementType = .word
-//        previewLabel.numberOfLines = 2
-//        previewLabel.collapsed = true
-        
     }
 }

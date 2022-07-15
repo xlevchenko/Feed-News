@@ -11,13 +11,13 @@ import ExpandableLabel
 class FeedViewController: UITableViewController {
     
     var arrayPosts = [Post]()
+    var states : Array<Bool>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getPosts()
         sortedButton()
         
-        // Set automatic dimensions for row height
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 177
     }
@@ -27,7 +27,7 @@ class FeedViewController: UITableViewController {
         super.viewDidAppear(animated)
         tableView.reloadData()
     }
-    
+
     
     func getPosts() {
         NetworkManager.shared.getPosts { [weak self] posts, error in
@@ -38,6 +38,7 @@ class FeedViewController: UITableViewController {
 
             DispatchQueue.main.async {
                 self?.arrayPosts = posts?.posts ?? []
+                self?.states = [Bool](repeating: true, count: (self?.arrayPosts.count)!)
                 self?.tableView.reloadData()
             }
         }
@@ -50,7 +51,7 @@ class FeedViewController: UITableViewController {
                 self.arrayPosts.sort { post1, post2 in
                     return post1.likesCount < post2.likesCount
                 }
-                    self.tableView.reloadData()
+                self.tableView.reloadData()
             }),
             
             UIAction(title: "Date", state: .off, handler: { _ in
@@ -72,25 +73,18 @@ class FeedViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PreviewCell", for: indexPath) as! PreviewCell
-        //let post = arrayPosts[indexPath.row]
-        
+
         cell.previewLabel.delegate = self
         cell.previewLabel.collapsedAttributedLink = NSAttributedString(string: "More", attributes: [.foregroundColor:UIColor.black])
-        cell.previewLabel.setLessLinkWith(lessLink: "Read Less", attributes: [.foregroundColor:UIColor.red], position: .natural)
+        cell.previewLabel.setLessLinkWith(lessLink: "Less", attributes: [.foregroundColor:UIColor.red], position: .left)
         
         cell.layoutIfNeeded()
-        
         cell.previewLabel.shouldCollapse = true
         cell.previewLabel.shouldExpand = true
-        cell.previewLabel.textReplacementType = .character
         cell.previewLabel.numberOfLines = 2
-        cell.previewLabel.collapsed = true
+        cell.previewLabel.collapsed = states[indexPath.row]
         
         cell.post = arrayPosts[indexPath.row]
-//        cell.titleLabel.text = post.title
-//        cell.previewLabel.text = post.previewText
-//        cell.likesCount.text = "❤️\(post.likesCount)"
-//        cell.timeshamp.text = post.timeshamp.timeAgo()
         return cell
     }
     
@@ -126,6 +120,7 @@ extension FeedViewController: ExpandableLabelDelegate {
     func didExpandLabel(_ label: ExpandableLabel) {
         let point = label.convert(CGPoint.zero, to: tableView)
         if let indexPath = tableView.indexPathForRow(at: point) as IndexPath? {
+            states[indexPath.row] = false
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             }
@@ -142,6 +137,7 @@ extension FeedViewController: ExpandableLabelDelegate {
     func didCollapseLabel(_ label: ExpandableLabel) {
         let point = label.convert(CGPoint.zero, to: tableView)
         if let indexPath = tableView.indexPathForRow(at: point) as IndexPath? {
+            states[indexPath.row] = true
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             }

@@ -17,7 +17,7 @@ struct PostResult: Codable {
     let postID: Int
     let timeshamp: Date
     var title, text: String
-    let postImage: String
+    var postImage: String
     let likesCount: Int
 
     enum CodingKeys: String, CodingKey {

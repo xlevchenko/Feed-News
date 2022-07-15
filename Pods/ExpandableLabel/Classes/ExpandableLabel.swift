@@ -233,7 +233,7 @@ extension ExpandableLabel {
             let lineTextWithAddedLink = NSMutableAttributedString(attributedString: lineTextWithLastWordRemoved)
             if let ellipsis = self.ellipsis {
                 lineTextWithAddedLink.append(ellipsis)
-                lineTextWithAddedLink.append(NSAttributedString(string: " ", attributes: [.font: self.font]))
+                lineTextWithAddedLink.append(NSAttributedString(string: " ", attributes: [.font: self.font as Any]))
             }
             lineTextWithAddedLink.append(linkName)
             let fits = self.textFitsWidth(lineTextWithAddedLink)
@@ -261,7 +261,7 @@ extension ExpandableLabel {
         let linkText = NSMutableAttributedString()
         if let ellipsis = self.ellipsis {
             linkText.append(ellipsis)
-            linkText.append(NSAttributedString(string: " ", attributes: [.font: self.font]))
+            linkText.append(NSAttributedString(string: " ", attributes: [.font: self.font as Any]))
         }
         linkText.append(linkName)
 
@@ -545,6 +545,8 @@ extension UILabel {
         case .right:
             return 1.0
         case .left, .natural, .justified:
+            return 0.0
+        @unknown default:
             return 0.0
         }
     }
