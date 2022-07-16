@@ -27,7 +27,7 @@ class FeedViewController: UITableViewController {
         super.viewDidAppear(animated)
         tableView.reloadData()
     }
-
+    
     
     func getPosts() {
         NetworkManager.shared.getPosts { [weak self] posts, error in
@@ -35,7 +35,7 @@ class FeedViewController: UITableViewController {
                 print("Failed to featch apps", error)
                 return
             }
-
+            
             DispatchQueue.main.async {
                 self?.arrayPosts = posts?.posts ?? []
                 self?.states = [Bool](repeating: true, count: (self?.arrayPosts.count)!)
@@ -58,7 +58,7 @@ class FeedViewController: UITableViewController {
                 self.arrayPosts.sort { post1, post2 in
                     return post1.timeshamp < post2.timeshamp
                 }
-                    self.tableView.reloadData()
+                self.tableView.reloadData()
             })
         ])
         
@@ -71,9 +71,10 @@ class FeedViewController: UITableViewController {
         return arrayPosts.count
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PreviewCell", for: indexPath) as! PreviewCell
-
+        
         cell.previewLabel.delegate = self
         cell.previewLabel.collapsedAttributedLink = NSAttributedString(string: "More", attributes: [.foregroundColor:UIColor.black])
         cell.previewLabel.setLessLinkWith(lessLink: "Less", attributes: [.foregroundColor:UIColor.red], position: .left)
@@ -96,18 +97,24 @@ class FeedViewController: UITableViewController {
         vc.postID = postId
         navigationController?.pushViewController(vc, animated: true)
     }
-
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = tableView.indexPathForSelectedRow?.row{
-                let selectedRow = indexPath
-                let detailVC = segue.destination as! DetailViewController
-            detailVC.postID = String(self.arrayPosts[selectedRow].postID)
-        } else {
-            print("nil")
+
+    @IBAction func detailButton(_ sender: UIButton) {
+        var superview = sender.superview
+        while let view = superview, !(view is UITableViewCell) {
+            superview = view.superview
         }
+        
+        guard let cell = superview as? UITableViewCell else { return }
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailController") as? DetailViewController else { return }
+        let postID = String(arrayPosts[indexPath.row].postID)
+        vc.postID = postID
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
+
 
 // MARK: - ExpandableLabel Delegate
 extension FeedViewController: ExpandableLabelDelegate {
